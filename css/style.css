@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a1628;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #e0e0e0;
+}
+
+canvas {
+  display: block;
+  cursor: crosshair;
+}
+
+#hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: rgba(10, 22, 40, 0.85);
+  border-bottom: 1px solid rgba(100, 200, 255, 0.2);
+  font-size: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#hud > div {
+  pointer-events: auto;
+}
+
+.hud-resources {
+  display: flex;
+  gap: 16px;
+}
+
+.hud-resource {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hud-resource .icon {
+  font-size: 16px;
+}
+
+.hud-resource .count {
+  font-weight: bold;
+  color: #7fd8ff;
+}
+
+.hud-tide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tide-bar {
+  width: 80px;
+  height: 12px;
+  background: #1a2a4a;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.tide-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2a6090, #4ac0ff);
+  transition: width 0.5s ease;
+  border-radius: 6px;
+}
+
+.hud-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#build-menu {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(10, 22, 40, 0.9);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.build-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 60, 100, 0.5);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  color: #a0d0ff;
+  font-size: 10px;
+  transition: all 0.15s;
+}
+
+.build-btn:hover, .build-btn.active {
+  background: rgba(60, 120, 200, 0.5);
+  border-color: #4ac0ff;
+  color: #fff;
+}
+
+.build-btn .key {
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+.build-btn .icon {
+  font-size: 20px;
+}
+
+#pause-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.6);
+  display: none;
+  z-index: 20;
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.5);
+}
+
+#islander-info {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 200px;
+  padding: 12px;
+  background: rgba(10, 22, 40, 0.9);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 8px;
+  font-size: 12px;
+  display: none;
+  z-index: 10;
+}
+
+.need-bar {
+  margin: 4px 0;
+}
+
+.need-bar-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.need-bar-track {
+  height: 6px;
+  background: #1a2a4a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.need-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}

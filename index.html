@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tide Colony</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div class="hud-resources">
+      <div class="hud-resource"><span class="icon">🪵</span> <span class="count" id="res-wood">0</span></div>
+      <div class="hud-resource"><span class="icon">🪸</span> <span class="count" id="res-coral">0</span></div>
+      <div class="hud-resource"><span class="icon">🥥</span> <span class="count" id="res-coconut">0</span></div>
+      <div class="hud-resource"><span class="icon">🐟</span> <span class="count" id="res-fish">0</span></div>
+      <div class="hud-resource"><span class="icon">💧</span> <span class="count" id="res-water">0</span></div>
+    </div>
+    <div class="hud-tide">
+      <span>🌊 Tide</span>
+      <div class="tide-bar"><div class="tide-fill" id="tide-fill"></div></div>
+      <span id="tide-label">Low</span>
+    </div>
+    <div class="hud-time">
+      <span id="time-icon">☀️</span>
+      <span id="time-label">Day 1</span>
+      <span id="islander-count">👤 3</span>
+    </div>
+  </div>
+
+  <div id="build-menu">
+    <div class="build-btn" data-building="hut" title="Hut — shelter for islanders">
+      <span class="icon">🛖</span><span class="key">[1]</span>
+    </div>
+    <div class="build-btn" data-building="seawall" title="Seawall — blocks water">
+      <span class="icon">🧱</span><span class="key">[2]</span>
+    </div>
+    <div class="build-btn" data-building="collector" title="Rain collector — fresh water">
+      <span class="icon">🪣</span><span class="key">[3]</span>
+    </div>
+    <div class="build-btn" data-building="fishing" title="Fishing station — food">
+      <span class="icon">🎣</span><span class="key">[4]</span>
+    </div>
+    <div class="build-btn" data-building="bridge" title="Bridge — walk over water">
+      <span class="icon">🌉</span><span class="key">[5]</span>
+    </div>
+  </div>
+
+  <div id="pause-overlay">⏸ PAUSED</div>
+
+  <div id="islander-info">
+    <div id="islander-name" style="font-weight:bold; margin-bottom:6px;"></div>
+    <div class="need-bar">
+      <div class="need-bar-label"><span>🍽️ Hunger</span><span id="hunger-val"></span></div>
+      <div class="need-bar-track"><div class="need-bar-fill" id="hunger-bar" style="background:#e8a040;"></div></div>
+    </div>
+    <div class="need-bar">
+      <div class="need-bar-label"><span>💧 Thirst</span><span id="thirst-val"></span></div>
+      <div class="need-bar-track"><div class="need-bar-fill" id="thirst-bar" style="background:#40a0e8;"></div></div>
+    </div>
+    <div class="need-bar">
+      <div class="need-bar-label"><span>😴 Rest</span><span id="rest-val"></span></div>
+      <div class="need-bar-track"><div class="need-bar-fill" id="rest-bar" style="background:#a040e8;"></div></div>
+    </div>
+    <div id="islander-task" style="margin-top:6px; font-size:11px; opacity:0.7;"></div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
